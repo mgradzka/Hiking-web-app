@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --green: #204330;
+    --yellow: #fedf48;
+    --lighteryellow: #fee048d3;
+}
+
+.flex {
+    display: flex;
+}
+
+h1 {
+    color: var(--yellow);
+    line-height: 5vw;
+    font-size: 1rem;
+}
+
+h2 {
+    font-family: 'Noticia Text', serif;
+}
+
+
+/* header */
+header {
+    background-color: var(--green);
+}
+
+nav {
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+nav img {
+    width: 3rem;
+    height: auto;
+}
+
+.hide {
+    display: none;
+}
+
+
+section > div {
+    flex-direction: column;
+}
+
+/* map */
+.map {
+    background-image: url(../images/overall_map.png);
+    background-size: cover;
+    width: 100%;
+    height: 90vw;
+}
+
+/* pins */
+.fa-solid {
+    font-style: normal;
+    font-family: fontawesome;
+    color: var(--green);
+    font-size: 7vw;
+    z-index: 100;
+}
+
+.fa-solid-active {
+    color: rgb(170, 0, 0);
+}
+
+.map {
+    position: relative;
+}
+
+.firstDot {
+    position: absolute;
+    top: 83%;
+    left: 87%;
+}
+
+.secondDot {
+    position: absolute;
+    top: 42%;
+    left: 19%;
+}
+
+.thirdDot {
+    position: absolute;
+    top: 38%;
+    left: 6%;
+}
+
+.fourthDot {
+    position: absolute;
+    top: 25%;
+    left: 22%;
+}
+
+.fifthDot {
+    position: absolute;
+    top: 22%;
+    left: 16%;
+}
+
+.sixthDot {
+    position: absolute;
+    top: 4%;
+    left: 7%;
+}
+
+h2 {
+    text-align:center;
+    font-size: 10vw;
+    padding: 1rem 0 0.5rem 0
+}
+
+h4 {
+    text-align: center;
+    font-size: 5vw;
+
+}
+article div {
+    align-items: center;
+}
+.btn {
+    color: var(--yellow);
+    height: fit-content;
+    background-color: var(--green);
+    padding: 0.5rem 0.8rem;
+    font-size: 3.2vw;
+    font-weight: bold;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border-style: none;
+    box-shadow: 3px 3px 5px rgba(94, 94, 94, 0.467);
+}
+
+.btn-clicked {
+    background-color: var(--yellow);
+    color: #20433056;
+    border: 2px solid var(--green);
+}
+
+.btn-div {
+    flex-direction: row;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+
+/* cards */
+
+#card1 {
+    background-image: url(../images/card-Bjergbanestigen.jpg);
+    background-position-y: 30%;
+}
+
+#card2 {
+    background-image: url(../images/card-Egholm.jpg);
+}
+
+#card3 {
+    background-image: url(../images/card-Mulbjerge.jpg);
+}
+
+#card4 {
+    background-image: url(../images/card-Poulstrup.jpg);
+}
+
+#card5 {
+    background-image: url(../images/card-oesterdaalennord.jpg);
+}
+
+#card6 {
+    background-image: url(../images/card-oesterdaalenSyd.jpg);
+}
+.card {
+    background-size: cover;
+    width: 100%;
+    height: 40vw;
+    border-radius: 1rem;
+    padding: 2rem;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 4px 4px 6px rgba(94, 94, 94, 0.467);
+}
+
+.main-card {
+    padding: 0.5rem 1rem;
+}
+
+h3 {
+    font-size: 6vw;
+    color: rgba(255, 255, 255, 0.808);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.808);
+    width: fit-content;
+}
+
+p {
+    font-size: 3vw;
+    color: rgba(255, 255, 255, 0.808);
+    line-height: 1rem;
+    font-weight: bold;
+}
+
+
+/* Detailed Cards*/
+
+.detailedCards {
+    border-radius: 1rem;
+    background-color: rgba(219, 228, 210, 0.808);
+    padding: 2rem 1rem;
+    margin-top: .5rem;
+}
+
+.detailedCards p {
+    color: rgba(0, 0, 0, 0.534);
+    padding: .5rem 0;
+}
+
+.detailedCards strong {
+    font-size: 3.3vw;
+    font-weight: bolder;
+}
+
+.detailedCards button:nth-child(6) {
+    margin: .5rem auto;
+    /* margin-bottom: 1rem; */
+    align-content: center;
+    display: flex;
+}
+
+
+/* card popup */
+.popup .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 350vh;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup h2 {
+    font-size: 5vw;
+    text-align: left;
+}
+.popup .content {
+    position: absolute;
+    /* top: 120%; */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: #fff;
+    border-radius: 1rem;
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    /*text-align:center;
+    */padding: 20px;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -moz-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    -o-transform: translate(-50%, -50%) scale(0);
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #222;
+    color: #fff;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+    transition: all 80ms ease-in-out;
+    -webkit-transition: all 80ms ease-in-out;
+    -moz-transition: all 80ms ease-in-out;
+    -ms-transition: all 80ms ease-in-out;
+    -o-transition: all 80ms ease-in-out;
+}
+
+ /* Map of Bjergbanestein */
+ .popup .content-map {
+    width: 350px;
+    height: 300px;
+ }
+.bjergmap {
+    background-image: url(../images/Bjergbanestein_map.jpg);
+    width: 100%;
+    height: 37vw;
+    margin-top: .5rem;
+    background-size: cover;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.26);
+
+}
+/* Close Up arrow*/
+.up i {
+    padding: .5rem 1rem;
+    background-color: beige;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    font-size: 1rem;
+    margin-top: 1.8rem;
+    margin-right: .3rem;
+    color: var(--green);
+    box-shadow: 3px 2px 3px rgba(117, 117, 105, 0.445);
+    z-index: 1;
+
+}
+/* Images */
+img {
+    width: 48%;
+    height: auto;
+    padding: .5rem 0;
+}
+.gap {
+    gap: .5rem;
+}
+
+
+/* footer */
+footer {
+    background-color: var(--green);
+    color: var(--yellow);
+    padding: 1rem 0 2rem 0;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+footer p {
+    font-size: 4vw;
+    color: var(--lighteryellow);
+    font-weight: lighter;
+    text-align: center;
+}
+
+.fa-facebook, .fa-instagram {
+    font-family: fontawesome;
+    font-size: 7vw;
+    font-style: normal;
+    color: var(--lighteryellow);
+}
+
+footer div {
+    gap: 1rem;
+    align-self: center;
+}
+
+
+
+/* go up */
+.mapup {
+    display: inline-block;
+    flex-direction: row;
+    width: fit-content;
+    background-color: var(--green);
+    padding: .5rem 1rem;
+    margin: 1rem;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+    border-style: none;
+    box-shadow: 3px 3px 5px rgba(94, 94, 94, 0.467);
+}
+
+
+.btn-container {
+    justify-content: end;
+}
+
+.fa-angle-up, .fa-map {
+    color: var(--yellow);
+    font-size: 5vw;
+    font-family: fontawesome;
+}

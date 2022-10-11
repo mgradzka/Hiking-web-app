@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/styles/style.css" rel="stylesheet" />
+  <script src="assets/js/script.js" defer></script>
+  <title>Aalborg - hiking</title>
+  <script src="https://kit.fontawesome.com/81264b6916.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noticia+Text:wght@700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <header>
+    <nav class="flex">
+      <img src="assets/images/green_yellow_logo.png" alt="logo">
+
+      <h1>Aalborg<br>Kommune</h1>
+    </nav>
+  </header>
+
+
+  <main>
+    <!-- map -->
+    <section class="map" id="map">
+      <i class="fa-solid fa-location-dot firstDot" id="Mulb"></i>
+      <i class="fa-solid fa-location-dot secondDot" id="Pols"></i>
+      <i class="fa-solid fa-location-dot thirdDot" id="Bjerg"></i>
+      <i class="fa-solid fa-location-dot fourthDot" id="OSyd"></i>
+      <i class="fa-solid fa-location-dot fifthDot" id="ONord"></i>
+      <i class="fa-solid fa-location-dot sixthDot" id="Egholm"></i>
+
+    </section>
+    <!-- filter section -->
+    <section>
+      <h2>Let's go hiking!</h2>
+      <h4>What routes are you looking for?</h4>
+      <div class="flex, btn-div">
+        <button class="btn" id="btnBike">Bike route</button>
+        <button class="btn" id="btn5">Less than 5km</button>
+        <button class="btn" id="btnCentre">Near the center</button>
+      </div>
+    </section>
+
+    <!-- first card -->
+    <section class=" main-card">
+      <div class="flex card" id="card1">
+        <h3>Bjergbanestien</h3>
+        <p>14km walking and cycling route</p>
+      </div>
+
+      <!-- card after cick -->
+      <article id="article" class=" detailedCards hide">
+        <p> <strong>Route: </strong>Sventrup - Godthaab - Oldstien - Nibe</p>
+        <p><strong>How to get there: </strong>take a train from the Aalborg station or bus number 1.</p>
+        <p>The perfect idea for a day trip with your loved ones.
+          A route that goes along closed railway line, crosses three rivers and leads to the center of Nibe.
+          The path continues through Nibe and towards Valpsund along the regional
+          cycle route 29.</p>
+        <div class="flex gap">
+          <img src="assets/images/Bjergbanestigen_gallery1.jpg" alt="Bjergbanestien" />
+          <img src="assets/images/Bjergbanestigen_gallery2.jpg" alt="Bjergbanestien" />
+        </div>
+
+        <!-- <div class="flex gap hide" id="bjergMoreGallery">
+          <img src="assets/images/Bjergbanestigen_gallery1.jpg" alt="Bjergbanestien" />
+          <img src="assets/images/Bjergbanestigen_gallery2.jpg" alt="Bjergbanestien" />
+        </div>
+        <button class="btn" id="bjergMoreBtn">More</button> -->
+
+        <!-- buttons -->
+
+        <!-- flora and fauna -->
+        <div class="flex gap">
+          <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupOne()">&times;</div>
+              <h2>Flora and fauna</h2>
+              <p>The route is full of various species of plants and animals. The landscape is open and hilly, you will
+                find there simple but beautiful danish landscape, fields with grain and rapeseed.<br><br> You can enjoy
+                the nature in the shade of apple trees
+                along
+                the way. Try to capture young cattle in the meadows and listen to the sound of flowing rivers. During
+                the summer and autumn, you can notice Danish mead in wet ditches along the path. <br>
+              </p><br>
+
+            </div>
+          </div>
+          <button class="btn flora" onclick="togglePopupOne()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-2">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupTwo()">&times;</div>
+              <h2>Amenities & To Do</h2>
+              <p>You will find information boards along the way to learn more about the region. There are also couple
+                of benches and shelter places, where you can rest and enjoy your madpakke with a family. If you would like to spend
+                the night outdoors, there is a Sølyst Camping over the fjord of Nibe. </p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupTwo()">Amenities & To Do</button>
+
+          <!-- map -->
+          <div class="popup" id="popup-3">
+            <div class="overlay"></div>
+            <div class="content content-map">
+              <div class="close-btn" onclick="togglePopupThree()">&times;</div>
+              <h2>Map of the route</h2>
+              <div class="bjergmap"></div>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupThree()">Route map</button>
+        </div>
+
+        <div class="btn-container flex up">
+          <i id="closeTheCard" class="fa-solid fa-angle-up"></i>
+        </div>
+      </article>
+    </section>
+
+    <!-- second card -->
+    <section class="main-card">
+      <div class="flex card" id="card2">
+        <h3>Egholm</h3>
+        <p>Four walking routes: 2.3km 5.3km 7.6km 8.8km<br>
+          It is located on an island</p>
+      </div>
+
+      <!-- card after click -->
+      <article class="detailedCards hide" id="article2">
+        <p> <strong>Route: </strong>Egholm Island </p>
+        <p><strong>How to get there: </strong>by ferry from Aalborg West</p>
+        <p>
+          Egholm offers a lot of possibility during the hike or even after.
+          Restaurants, caffes, or maybe kayaking. There is also hidden a troll
+          somewhere on the island built from recycled wood.
+          So lets go and find him! You can bring along your dog, but only on leash!</p>
+        <div class="flex gap">
+          <img src="assets/images/Egholm_gallery1.jpg" alt="Egholm" />
+          <img src="assets/images/Egholm_gallery2.jpg" alt="Egholm" />
+        </div>
+        <div class="flex gap hide" id="egholmMoreGallery">
+          <img src="assets/images/Egholm-02.jpg" alt="Egholm" />
+          <img src="assets/images/Egholm-06.jpg" alt="Egholm" />
+        </div>
+        <button class="btn" id="egholmMoreBtn">More</button>
+
+        <!-- buttons -->
+        <div class="flex gap">
+          <!-- flora and fauna -->
+          <div class="popup" id="popup-4">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupFour()">&times;</div>
+              <h2>Flora and fauna</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupFour()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-5">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupFive()">&times;</div>
+              <h2>Amenities</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupFive()">Amenities & To Do</button>
+
+          <!--  map -->
+          <div class="popup" id="popup-6">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupSix()">&times;</div>
+              <h2>Map of the route</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupSix()">Route map</button>
+        </div>
+        <div class="btn-container flex up">
+          <i id="closeTheCard2" class="fa-solid fa-angle-up"></i>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- third card -->
+    <section class="main-card">
+      <div class="flex card" id="card3">
+        <h3>Oesteraadalen Nord</h3>
+        <p>Three walking routes: 4.1km 2km 1km<br>
+          The routes enclose a fishing lakes for potential fishers</p>
+      </div>
+
+      <!-- card after click -->
+      <article class="detailedCards hide" id="article3">
+        <p> <strong>Route: </strong>it is in Aadalen.</p>
+        <p><strong>How to get there: </strong>Only 3 km from Aalborg Centrum you will find Oesteraadalen Nord </p>
+        <p>
+          In 1992 and in the following year a nature restoration project was carried out in Oesteraadalen Nord.
+          The project was a huge success and this park was created in the middle of the big city.
+          With an absolutely fantastic nature and recreational opportunities in the middle of Aalborg,
+          Østerådalen is a popular excursion destination that provide possibilities to runners, bikers, walkers.
+        </p>
+        <div class="flex gap">
+          <img src="assets/images/Nord_gallery1.jpg" alt="Oesteraadalen Nord" />
+          <img src="assets/images/Nord_gallery2.jpg" alt="Oesteraadalen Nord" />
+        </div>
+
+        <div class="flex gap hide" id="nordMoreGallery">
+          <img src="assets/images/Nord-03.jpg" alt="Oesteraadalen Nord" />
+          <img src="assets/images/Nord-18.jpg" alt="Oesteraadalen Nord" />
+        </div>
+        <button class="btn" id="nordMoreBtn">More</button>
+
+        <!-- buttons -->
+        <div class="flex gap">
+
+          <!-- flora and fauna -->
+          <div class="popup" id="popup-7">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupSeven()">&times;</div>
+              <h2>Flora and fauna</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupSeven()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-8">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupEight()">&times;</div>
+              <h2>Amenities</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupEight()">Amenities & To Do</button>
+
+          <!-- map -->
+          <div class="popup" id="popup-9">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupNine()">&times;</div>
+              <h2>Map of the route</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupNine()">Route map</button>
+        </div>
+        <div class="btn-container flex up">
+          <i id="closeTheCard3" class="fa-solid fa-angle-up"></i>
+        </div>
+      </article>
+    </section>
+
+    <!-- fourth card -->
+    <section class="main-card">
+      <div class="flex card" id="card4">
+        <h3>Oesteraadalen Syd</h3>
+        <p>Two walking routes: 6.5km 5km<br>
+          Including bicycle route as well</p>
+      </div>
+
+      <!-- card after click -->
+      <article class="detailedCards hide" id="article4">
+        <p> <strong>Route: </strong>Walking and cycling route from Dall Moellevej
+          in Svenstrup to Aalborg Centrum via Oesteraadalen Nord. There is only one path for walking porpuses.
+        </p>
+        <div class="flex gap"></div>
+        <img src="assets/images/Syd_gallery1.jpg" alt="Oesteraadalen Syd" />
+        <img src="assets/images/Syd_gallery2.jpg" alt="Oesteraadalen Syd" />
+
+        <div class="flex gap hide" id="sydMoreGallery">
+          <img src="assets/images/Syd-05.jpg" alt="Oesteraadalen Syd" />
+          <img src="assets/images/Syd-08.jpg" alt="Oesteraadalen Syd" />
+        </div>
+        <button class="btn" id="sydMoreBtn">More</button>
+
+        <!-- buttons -->
+        <div class="flex gap">
+
+          <!-- flora and fauna -->
+          <div class="popup" id="popup-10">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupTen()">&times;</div>
+              <h2>Flora and fauna</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupTen()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-11">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupEleven()">&times;</div>
+              <h2>Amenities</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupEleven()">Amenities & To Do</button>
+
+          <!-- map -->
+          <div class="popup" id="popup-12">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupTwelve()">&times;</div>
+              <h2>Map of the route</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupTwelve()">Route map</button>
+        </div>
+        <div class="btn-container flex up">
+          <i id="closeTheCard4" class="fa-solid fa-angle-up"></i>
+        </div>
+        
+      </article>
+    </section>
+
+    <!-- fifth card -->
+    <section class="main-card">
+      <div class="flex card" id="card5">
+        <h3>Mulbjerge</h3>
+        <p>With multiple little walks in the area</p>
+      </div>
+
+      <!-- card after click -->
+      <article class="detailedCards hide" id="article5">
+        <p> <strong>Route: </strong>The routes start at Stejlgabet.</p>
+        <p><strong>How to get there: </strong>take the bus no. 56 from the busterminal</p>
+        <p>
+          Visis Mulbjerge which used to be an island. It's coast offer great spots for the people who wnat to fish.
+          It is a great place for family gatherings, together with children, there are a grill spot, bathing pier.
+          You can also reach the highest spot of the region, along a paved path,above sea level. Here you will
+          find the panoramic table which gives you an overview about the area.
+          You can bring along your dog, but only on leash!
+        </p>
+        <div class="flex gap">
+          <img src="assets/images/Mulbjerge_gallery1.jpg" alt="Mulbjerge" />
+          <img src="assets/images/Mulbjerge_gallery2.jpg" alt="Mulbjerge" />
+        </div>
+        <div class="flex gap hide" id="mulbjergeMoreGallery">
+          <img src="assets/images/Mulbjerge-02.jpg" alt="Mulbjerge" />
+        </div>
+        <button class="btn" id="mulbjergeMoreBtn">More</button>
+
+        <!-- buttons -->
+        <div class="flex gap">
+
+          <!-- flora and fauna -->
+          <div class="popup" id="popup-13">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupThirteen()">&times;</div>
+              <h2>Flora and Fauna</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupThirteen()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-14">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupFourteen()">&times;</div>
+              <h2>Amenities</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupFourteen()">Amenities & To Do</button>
+
+          <!-- map -->
+          <div class="popup" id="popup-15">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupFifteen()">&times;</div>
+              <h2>Route of the map</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupFifteen()">Route map</button>
+        </div>
+        <div class="btn-container flex up">
+          <i id="closeTheCard5" class="fa-solid fa-angle-up"></i>
+        </div>
+      </article>
+    </section>
+
+    <!-- sixth card -->
+    <section class="main-card">
+      <div class="flex card 6" id="card6">
+        <h3>Poulstrup</h3>
+        <p>Three walking routes: 6.3km 2.5km 2.5km<br>
+          With allocated horse riding route for riders</p>
+      </div>
+
+      <!-- card afgter click -->
+      <article class="detailedCards hide" id="article6">
+        <p> <strong>Route: </strong>Polstrup Lake and Dall Hede, 12 km from Aalborg</p>
+        <p><strong>How to get there: </strong>Most easier by car.</p>
+        <p>
+          Polstrup offers a track to the horse fanatics or to the currious spectators.
+          It's lakes can give you the true nature experience including every beauty of it.
+        </p>
+        <div class="flex gap">
+          <img src="assets/images/PoulstrupSŤOgDallHede-04.jpg" alt="Poulstrup" />
+          <img src="assets/images/Poulstrup_gallery2.jpg" alt="Poulstrup" />
+        </div>
+
+        <div class="flex gap hide" id="poulstrupMoreGallery">
+          <img src="assets/images/PoulstrupSŤOgDallHede-10.jpg" alt="Poulstrup" />
+          <img src="assets/images/PoulstrupSŤOgDallHede-11.jpg" alt="Poulstrup" />
+        </div>
+        <button class="btn" id="poulstrupMoreBtn">More</button>
+
+        <!-- buttons -->
+        <div class="flex gap">
+
+          <!-- flora and fauna -->
+          <div class="popup" id="popup-16">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupSixteen()">&times;</div>
+              <h2>Flora and Fauna</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupSixteen()">Flora and Fauna</button>
+
+          <!-- amenities -->
+          <div class="popup" id="popup-17">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupSeventeen()">&times;</div>
+              <h2>Amenities</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupSeventeen()">Amenities & To Do</button>
+
+          <!-- map -->
+          <div class="popup" id="popup-18">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopupEighteen()">&times;</div>
+              <h2>Route of the map</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quis.</p>
+            </div>
+          </div>
+          <button class="btn" onclick="togglePopupEighteen()">Route map</button>
+        </div>
+        <div class="btn-container flex up">
+          <i id="closeTheCard6" class="fa-solid fa-angle-up"></i>
+        </div>
+      </article>
+    </section>
+
+    <div class="btn-container flex">
+      <a href="#map" class="mapup flex">
+        <i class="fa-solid fa-angle-up"></i>
+        <i class="fa-solid fa-map"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="flex">
+    <div class="flex">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <p>@2022 Aalborg Kommune</p>
+  </footer>
+</body>
+
+</html>
